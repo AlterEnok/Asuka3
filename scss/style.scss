@@ -1,0 +1,573 @@
+/* Общий сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent-color: #d6d6d6;
+    --font-family-main: "Lilita One", sans-serif;
+    --font-family-secondary: "Lobster", sans-serif;
+    --font-family-lecreri: "Leckerli One", sans-serif;
+    --font-family-macondo: "Macondo Swash Caps", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 45px;
+    padding: 22px 42px;
+    background-color: var(--accent-color);
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: capitalize;
+    transition: background-color 0.2s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #15786c;
+        }
+    }
+}
+
+[class*='__container'] {
+    max-width: 2447px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body,
+html {
+    background: linear-gradient(80deg, #1b1b1b 0%, #403b3b 100%);
+    font-family: var(--font-family-secondary);
+    scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    &__top {
+        background-color: transparent;
+        padding: 10px 0;
+        font-size: 14px;
+        color: var(--text-color);
+
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 2447px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: var(--text-color);
+            transition: color 0.3s;
+
+            &:hover {
+                color: #ff6b6b;
+            }
+        }
+
+        .header__contacts {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-left: 60px;
+            position: relative;
+            bottom: 4px;
+
+            @media(max-width:767px) {
+                display: none;
+            }
+
+
+
+
+        }
+
+        .header__icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .header__socials {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+            top: 8px;
+            right: 120vh;
+
+            @media (min-width: 1920px) and (max-width: 3500px) {
+                right: 114vh;
+            }
+
+            @media(max-width: 767px) {
+                display: none;
+            }
+
+            .header__social-icon img {
+                width: 14px;
+                height: 14px;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        /* изменено для выравнивания */
+        align-items: center;
+        padding: 20px 0;
+        max-width: 2447px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .header__logo img {
+        padding-bottom: 25px;
+
+        @media(max-width:767px) {
+            margin-left: 16px;
+        }
+    }
+
+    .header__menu {
+
+        display: flex;
+        gap: 30px;
+        font-family: "Lilita One", sans-serif;
+        font-weight: 400;
+
+        font-size: 24px;
+        line-height: 114%;
+        letter-spacing: 0.13em;
+        margin-left: -120px;
+
+
+
+        @media(max-width:767px) {
+            display: none;
+        }
+
+
+
+        &-link {
+            text-transform: uppercase;
+            font-family: "Lilita One", sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 114%;
+            letter-spacing: 0.13em;
+            transition: color 0.3s;
+
+
+
+
+            &:hover {
+                color: #ff6b6b;
+            }
+        }
+
+    }
+
+    .menu-icon {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        position: relative;
+
+        span {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        @media (max-width: 767px) {
+            display: flex;
+        }
+    }
+
+    /* Мобильное меню */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #fa3e3e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: left 0.3s ease;
+
+
+        &._active {
+            left: 0;
+            /* Двигаем меню в видимую область */
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            font-size: 3rem;
+
+        }
+
+        &__item {
+            text-align: center;
+        }
+
+        &__link {
+            font-family: "Lilita One", sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+            color: #fff;
+            text-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            transition: color 0.3s ease;
+
+
+            &:hover {
+                color: #6c171f;
+            }
+        }
+    }
+
+    /* Мобильная версия бургер-меню */
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+
+
+        @media (max-width: 767px) {
+
+            flex-direction: column;
+            justify-content: space-between;
+            height: 18px;
+            width: 30px;
+            position: relative;
+            top: -100px;
+            cursor: pointer;
+            z-index: 1000;
+            left: -33px;
+
+            span {
+                display: block;
+                position: absolute;
+                width: 24px;
+                height: 2px;
+
+                transition: all 0.3s ease;
+
+                &:nth-child(1) {
+                    top: 0;
+                }
+
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(3) {
+                    bottom: 0;
+                    width: 14px;
+                    height: 2px;
+                }
+            }
+
+            &._active span {
+                background-color: #fff;
+                transform: scale(0);
+
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 50%;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top: 50%;
+                    width: 26px;
+                }
+            }
+        }
+    }
+
+    .header__contacts-active {
+        @media(max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            gap: 10px;
+
+            img {
+                width: 24px;
+                margin-right: 10px;
+
+            }
+        }
+    }
+
+    .header__socials-active {
+        display: flex;
+        gap: 20px;
+
+        @media(max-width: 767px) {
+
+
+
+            img {
+                width: 42px;
+                height: 42px;
+                margin-top: 30px;
+
+
+            }
+
+
+        }
+    }
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    &__container {
+        @extend [class*='__container'];
+        position: relative;
+        height: 135%;
+        padding: 0;
+    }
+
+    &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+
+        .hero__title {
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-family: 'Macondo Swash Caps', cursive;
+            margin-right: 23px;
+
+
+            .lobster {
+                font-family: "Lobster", sans-serif;
+                font-weight: 400;
+                font-size: 96px;
+                line-height: 125%;
+                letter-spacing: 0.13em;
+
+                @media(max-width: 767px) {
+                    font-size: 60px;
+                }
+            }
+
+            .lecler {
+                font-family: "Leckerli One", sans-serif;
+                line-height: 134%;
+            }
+
+            .macondo {
+                font-family: "Macondo Swash Caps", sans-serif;
+                line-height: 118%;
+                color: #fa3e3e;
+            }
+        }
+    }
+}
+
+/*SECOND SECTION*/
+
+.parallax {
+    height: 100vh;
+    background-image: url('../img/bg.jpg');
+    /* Ваше изображение */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; // Чтобы не выходило за пределы блока
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.658);
+        z-index: 1;
+    }
+
+    // Параллакс-эффект
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        z-index: -1; // Помещаем за контент
+    }
+}
+
+// Контейнер для контента внутри секции
+.parallax__content {
+    z-index: 10; // Чтобы контент был сверху
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+// Заголовок
+.parallax__title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    animation: slideIn 2s ease-out;
+
+    .lobster {
+        font-family: "Lobster", sans-serif;
+        font-weight: 400;
+        font-size: 96px;
+        line-height: 125%;
+        letter-spacing: 0.13em;
+    }
+
+    .lecler {
+        font-family: "Leckerli One", sans-serif;
+        line-height: 134%;
+    }
+
+    .macondo {
+        font-family: "Macondo Swash Caps", sans-serif;
+        line-height: 118%;
+        color: #fa3e3e;
+    }
+}
+
+// Описание
+.parallax__description {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 20px;
+    animation: fadeInText 3s ease-out;
+}
+
+// Анимации
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.why__us {
+    padding-top: 20px;
+    padding: 80px 50px;
+    text-align: center;
+    background: #ff6b6b;
+
+    h2 {
+        color: #d6d6d6;
+
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+}

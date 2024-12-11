@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hachi Sushi - The best sushi takeaway experience.">
+    <title>Asuka</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Leckerli+One&family=Lobster&family=Macondo+Swash+Caps&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__top">
+            <div class="header__container">
+                <div class="header__contacts">
+                    <a href="tel:+123456789" class="header__phone">
+                        <img src="img/icons/mobl.svg" alt="Phone Icon" class="header__icon">
+                        +1 234 567 89
+                    </a>
+                    <a href="mailto:info@example.com" class="header__email">
+                        <img src="img/icons/gmail.svg" alt="Mail Icon" class="header__icon">
+                        asuka-sushi@gmail.com
+                    </a>
+                </div>
+                <div class="header__socials">
+                    <a href="#" class="header__social-icon" aria-label="Facebook">
+                        <img src="img/icons/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="header__social-icon" aria-label="Twitter">
+                        <img src="img/icons/x.svg" alt="Twitter">
+                    </a>
+                    <a href="#" class="header__social-icon" aria-label="Instagram">
+                        <img src="img/icons/in.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="header__container">
+                <a href="#" class="header__logo">
+                    <img src="img/logo.svg" alt="Asuka Logo">
+                </a>
+
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li class="header__menu-item"><a href="#takeaway" class="header__menu-link">Takeaway</a></li>
+                        <li class="header__menu-item"><a href="#menu" class="header__menu-link">Menu</a></li>
+                        <li class="header__menu-item"><a href="#find-us" class="header__menu-link">Find Us</a></li>
+                        <li class="header__menu-item"><a href="#contact" class="header__menu-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Мобильное меню -->
+            <div class="menu">
+                <div class="header__contacts header__contacts-active">
+                    <a href="tel:+123456789" class="header__phone">
+                        <img src="img/icons/mobl.svg" alt="Phone Icon" class="header__icon">
+                        +1 234 567 89
+                    </a>
+                    <a href="mailto:info@example.com" class="header__email">
+                        <img src="img/icons/gmail.svg" alt="Mail Icon" class="header__icon">
+                        asuka-sushi@gmail.com
+                    </a>
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
+                    <li class="menu__item"><a href="#menu" class="menu__link">Menu</a></li>
+                    <li class="menu__item"><a href="#about" class="menu__link">About Us</a></li>
+                    <li class="menu__item"><a href="#contact" class="menu__link">Contact</a></li>
+                </ul>
+                <div class="header__socials header__socials-active">
+                    <a href="#" class="header__social-icon" aria-label="Facebook">
+                        <img src="img/icons/fb.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="header__social-icon" aria-label="Twitter">
+                        <img src="img/icons/x.svg" alt="Twitter">
+                    </a>
+                    <a href="#" class="header__social-icon" aria-label="Instagram">
+                        <img src="img/icons/in.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__container">
+                <video class="hero__video" autoplay muted loop>
+                    <source src="img/sishi.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero__overlay">
+                    <h1 class="hero__title"><span class="lobster">Welcome</span> <span class="lecler">to</span> <br>
+                        <span class="macondo">Asuka</span> Sushi Takeaway
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="why__us">
+            <h2>Why us?</h2>
+            <p>The Market, put simply, is the place for all your favourite Asian dishes. We want to
+                show diversity, but with a twist.
+            </p>
+        </section>
+
+        <section id="home" class="parallax">
+            <div class="parallax__content">
+                <h1 class="parallax__title"><span class="lobster">Best</span class="lecler"><span>sushi</span> in all
+                    <span class="macondo">Croatia</span>
+                </h1>
+                <p class="parallax__description">The most important thing for us is that our guests can feel the love in
+                    what we make.
+                    Regardless of if we’re talking about food, wine or cocktails
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
