@@ -180,6 +180,8 @@ html {
 
 
 
+
+
         @media(max-width:767px) {
             display: none;
         }
@@ -238,10 +240,13 @@ html {
         align-items: center;
         padding: 20px;
         transition: left 0.3s ease;
+        overflow: hidden;
+
 
 
         &._active {
             left: 0;
+
             /* Двигаем меню в видимую область */
         }
 
@@ -405,8 +410,16 @@ html {
         .hero__title {
             font-size: clamp(3rem, 5vw, 5rem);
             font-family: 'Macondo Swash Caps', cursive;
-            margin-right: 23px;
+            margin-right: 12vh;
 
+            @media (min-width: 1920px) and (max-width: 3500px) {
+                margin-right: 15vh;
+            }
+
+
+            @media(max-width:767px) {
+                margin-right: 0;
+            }
 
             .lobster {
                 font-family: "Lobster", sans-serif;
@@ -491,6 +504,10 @@ html {
     text-transform: uppercase;
     margin: 0;
     animation: slideIn 2s ease-out;
+
+    @media(max-width: 767px) {
+        font-size: 30px;
+    }
 
     .lobster {
         font-family: "Lobster", sans-serif;

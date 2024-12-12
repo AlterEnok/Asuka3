@@ -214,6 +214,7 @@ html {
   align-items: center;
   padding: 20px;
   transition: left 0.3s ease;
+  overflow: hidden;
 }
 .header .menu._active {
   left: 0;
@@ -347,7 +348,17 @@ html {
 .hero__overlay .hero__title {
   font-size: clamp(3rem, 5vw, 5rem);
   font-family: "Macondo Swash Caps", cursive;
-  margin-right: 23px;
+  margin-right: 12vh;
+}
+@media (min-width: 1920px) and (max-width: 3500px) {
+  .hero__overlay .hero__title {
+    margin-right: 15vh;
+  }
+}
+@media (max-width: 767px) {
+  .hero__overlay .hero__title {
+    margin-right: 0;
+  }
 }
 .hero__overlay .hero__title .lobster {
   font-family: "Lobster", sans-serif;
@@ -422,6 +433,11 @@ html {
   text-transform: uppercase;
   margin: 0;
   animation: slideIn 2s ease-out;
+}
+@media (max-width: 767px) {
+  .parallax__title {
+    font-size: 30px;
+  }
 }
 .parallax__title .lobster {
   font-family: "Lobster", sans-serif;
