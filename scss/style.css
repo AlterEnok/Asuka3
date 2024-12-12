@@ -165,7 +165,7 @@ html {
   font-size: 24px;
   line-height: 114%;
   letter-spacing: 0.13em;
-  margin-left: -120px;
+  margin-left: -100px;
 }
 @media (max-width: 767px) {
   .header .header__menu {
@@ -501,6 +501,11 @@ html {
   font-size: 2.5rem;
   margin-bottom: 20px;
   margin-right: 12vh;
+}
+@media (max-width: 767px) {
+  .why__us h2 {
+    margin-right: 0;
+  }
 }
 .why__us p {
   font-size: 1.2rem;
