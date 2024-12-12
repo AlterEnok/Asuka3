@@ -58,6 +58,12 @@ html {
     scroll-behavior: smooth;
 }
 
+body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 /* Header */
 .header {
     position: absolute;
@@ -260,6 +266,7 @@ html {
             font-size: 3rem;
 
         }
+
 
         &__item {
             text-align: center;
